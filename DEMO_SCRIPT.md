@@ -1,5 +1,22 @@
 # Five-minute demo script
 
+## Pre-demo setup (do this before recording)
+
+1. Copy the env template and set a password:
+   ```bash
+   cp .env.example .env
+   echo 'BOOTSTRAP_ADMIN_PASSWORD=your-password' >> .env
+   ```
+2. Start the app (single command, single server):
+   ```bash
+   ./start.sh
+   ```
+3. Open **http://localhost:8000** — the full app loads from the same port; no separate dev server needed.
+
+> The script checks Python deps, validates `.env`, and auto-builds the frontend if the `dist/` folder is missing. Subsequent starts are instant.
+
+---
+
 ## 0:00–0:35 — Problem
 
 “Survey QC is not only checking whether a code is valid. The questionnaire may say code 1 means increase while the respondent clearly says decrease. A QC analyst currently compares the questionnaire, dataset, and recording manually.”
