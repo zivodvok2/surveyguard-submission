@@ -1,0 +1,283 @@
+[
+  {
+    "case_id": "case01",
+    "ground_truth": [],
+    "verified_findings": [
+      {
+        "finding_id": "3efbf7160f95e172",
+        "respondent_id": "CASE01",
+        "question_id": "Q1A",
+        "category": "insufficient_probing",
+        "severity": "warning",
+        "claim": "The open-ended response may not have been probed sufficiently",
+        "evidence": {
+          "expected_question": "Why did production change? PROBE FULLY",
+          "audio_question": "Why did production change?",
+          "similarity": 0.6884,
+          "timestamp": {
+            "start": 13.0,
+            "end": 17.0
+          },
+          "spoken_answer": "New customer orders arrived",
+          "answer_word_count": 4
+        },
+        "detector_confidence": 0.7,
+        "verdict": "confirmed",
+        "confidence": 0.9,
+        "verifier_reason": "The probe instruction said 'PROBE FULLY' but the actual question asked was the same as the expected question with only 0.69 similarity, and the answer was a brief 4-word response ('New customer orders arrived') indicating insufficient follow-up probing.",
+        "reviewer_decision": "pending"
+      }
+    ]
+  },
+  {
+    "case_id": "case02",
+    "ground_truth": [],
+    "verified_findings": [
+      {
+        "finding_id": "4da984b09bb1c7de",
+        "respondent_id": "CASE02",
+        "question_id": "Q1A",
+        "category": "insufficient_probing",
+        "severity": "warning",
+        "claim": "The open-ended response may not have been probed sufficiently",
+        "evidence": {
+          "expected_question": "Why did production change? PROBE FULLY",
+          "audio_question": "Why did production change?",
+          "similarity": 0.6884,
+          "timestamp": {
+            "start": 13.0,
+            "end": 17.0
+          },
+          "spoken_answer": "Demand from regular customers weakened",
+          "answer_word_count": 5
+        },
+        "detector_confidence": 0.7,
+        "verdict": "confirmed",
+        "confidence": 0.72,
+        "verifier_reason": "The spoken answer is very short (5 words) and the audio question omits the 'PROBE FULLY' directive from the expected question, suggesting the respondent was not probed further despite an instruction to do so.",
+        "reviewer_decision": "pending"
+      }
+    ]
+  },
+  {
+    "case_id": "case03",
+    "ground_truth": [
+      "Q1::audio_data_mismatch",
+      "Q1::verbatim_contradicts_audio"
+    ],
+    "verified_findings": [
+      {
+        "finding_id": "10d6166a60bf6f9f",
+        "respondent_id": "CASE03",
+        "question_id": "Q1",
+        "category": "audio_data_mismatch",
+        "severity": "critical",
+        "claim": "The spoken answer conflicts with the captured survey value",
+        "evidence": {
+          "expected_question": "Compared with last month, did production increase, remain unchanged, or decrease?",
+          "audio_question": "Compared with last month, did production increase, remain unchanged, or decrease?",
+          "similarity": 1.0,
+          "timestamp": {
+            "start": 0.0,
+            "end": 8.0
+          },
+          "spoken_answer": "Production decreased Why did production change?",
+          "spoken_direction": "decrease",
+          "captured_column": "Q1",
+          "captured_value": 1,
+          "captured_direction": "increase"
+        },
+        "detector_confidence": 0.97,
+        "verdict": "confirmed",
+        "confidence": 0.92,
+        "verifier_reason": "The spoken answer explicitly states 'decreased' (spoken_direction='decrease'), but the captured value of 1 maps to 'increase' in the captured column, showing a clear mismatch between the audio response and the recorded survey value.",
+        "reviewer_decision": "pending"
+      },
+      {
+        "finding_id": "d0bafb74c471f5a3",
+        "respondent_id": "CASE03",
+        "question_id": "Q1",
+        "category": "verbatim_contradicts_audio",
+        "severity": "critical",
+        "claim": "The captured verbatim reverses the meaning of the spoken answer",
+        "evidence": {
+          "expected_question": "Compared with last month, did production increase, remain unchanged, or decrease?",
+          "audio_question": "Compared with last month, did production increase, remain unchanged, or decrease?",
+          "similarity": 1.0,
+          "timestamp": {
+            "start": 0.0,
+            "end": 8.0
+          },
+          "spoken_answer": "Customer demand was lower",
+          "captured_verbatim": "Production increased because demand grew",
+          "verbatim_column": "Q1A",
+          "semantic_similarity": 0.3029,
+          "spoken_direction": "decrease",
+          "verbatim_direction": "increase"
+        },
+        "detector_confidence": 0.97,
+        "verdict": "confirmed",
+        "confidence": 0.95,
+        "verifier_reason": "The captured verbatim states production increased due to growing demand, which directly reverses the spoken answer that customer demand was lower (implying production decreased), and the directions explicitly conflict (decrease vs. increase).",
+        "reviewer_decision": "pending"
+      },
+      {
+        "finding_id": "f2200517d8e9766d",
+        "respondent_id": "CASE03",
+        "question_id": "Q1A",
+        "category": "insufficient_probing",
+        "severity": "warning",
+        "claim": "The open-ended response may not have been probed sufficiently",
+        "evidence": {
+          "expected_question": "Why did production change? PROBE FULLY",
+          "audio_question": "Why did production change?",
+          "similarity": 0.6884,
+          "timestamp": {
+            "start": 13.0,
+            "end": 17.0
+          },
+          "spoken_answer": "Customer demand was lower",
+          "answer_word_count": 4
+        },
+        "detector_confidence": 0.7,
+        "verdict": "confirmed",
+        "confidence": 0.88,
+        "verifier_reason": "The expected instruction to 'PROBE FULLY' was not followed in the audio question, and the resulting 4-word answer is too brief for an open-ended question about why production changed.",
+        "reviewer_decision": "pending"
+      }
+    ]
+  },
+  {
+    "case_id": "case04",
+    "ground_truth": [
+      "Q1::audio_data_mismatch"
+    ],
+    "verified_findings": [
+      {
+        "finding_id": "7cbfca7939803046",
+        "respondent_id": "CASE04",
+        "question_id": "Q1",
+        "category": "audio_data_mismatch",
+        "severity": "critical",
+        "claim": "The captured code conflicts with the direction stated in the verbatim",
+        "evidence": {
+          "captured_column": "Q1",
+          "captured_value": 1,
+          "captured_direction": "increase",
+          "verbatim_column": "Q1A",
+          "verbatim": "Production decreased because orders fell",
+          "spoken_direction": "decrease"
+        },
+        "detector_confidence": 0.97,
+        "verdict": "confirmed",
+        "confidence": 0.92,
+        "verifier_reason": "The captured code (1 = increase) conflicts with the spoken direction ('decrease') explicitly stated in the verbatim text, where the respondent said production decreased.",
+        "reviewer_decision": "pending"
+      },
+      {
+        "finding_id": "fc397d238bfb3c4e",
+        "respondent_id": "CASE04",
+        "question_id": "Q1",
+        "category": "verbatim_audio_mismatch",
+        "severity": "warning",
+        "claim": "The captured verbatim may not represent the respondent's spoken explanation",
+        "evidence": {
+          "expected_question": "Compared with last month, did production increase, remain unchanged, or decrease?",
+          "audio_question": "Compared with last month, did production increase, remain unchanged, or decrease?",
+          "similarity": 1.0,
+          "timestamp": {
+            "start": 0.0,
+            "end": 8.0
+          },
+          "spoken_answer": "Several new orders arrived",
+          "captured_verbatim": "Production decreased because orders fell",
+          "verbatim_column": "Q1A",
+          "semantic_similarity": 0.2919
+        },
+        "detector_confidence": 0.72,
+        "verdict": "confirmed",
+        "confidence": 0.92,
+        "verifier_reason": "The spoken answer 'Several new orders arrived' semantically contradicts the captured verbatim 'Production decreased because orders fell' (similarity 0.29), strongly suggesting the captured text does not reflect the respondent's actual words.",
+        "reviewer_decision": "pending"
+      },
+      {
+        "finding_id": "3c937cd65a163f5b",
+        "respondent_id": "CASE04",
+        "question_id": "Q1A",
+        "category": "insufficient_probing",
+        "severity": "warning",
+        "claim": "The open-ended response may not have been probed sufficiently",
+        "evidence": {
+          "expected_question": "Why did production change? PROBE FULLY",
+          "audio_question": "Why did production change?",
+          "similarity": 0.6884,
+          "timestamp": {
+            "start": 13.0,
+            "end": 17.0
+          },
+          "spoken_answer": "Several new orders arrived",
+          "answer_word_count": 4
+        },
+        "detector_confidence": 0.7,
+        "verdict": "confirmed",
+        "confidence": 0.85,
+        "verifier_reason": "The expected question explicitly says 'PROBE FULLY' and the spoken answer is only 4 words, indicating insufficient probing of the open-ended response.",
+        "reviewer_decision": "pending"
+      }
+    ]
+  },
+  {
+    "case_id": "case05",
+    "ground_truth": [
+      "Q1::invalid_code"
+    ],
+    "verified_findings": [
+      {
+        "finding_id": "2cc8a5a747cafa10",
+        "respondent_id": "CASE05",
+        "question_id": "Q1",
+        "category": "invalid_code",
+        "severity": "critical",
+        "claim": "Captured value is not a valid questionnaire code",
+        "evidence": {
+          "column": "Q1",
+          "captured_value": 9,
+          "allowed_codes": {
+            "1": "Increase",
+            "2": "Remain unchanged",
+            "3": "Decrease"
+          }
+        },
+        "detector_confidence": 1.0,
+        "verdict": "confirmed",
+        "confidence": 0.95,
+        "verifier_reason": "The captured value 9 is not among the allowed codes 1, 2, or 3, making it an invalid questionnaire code.",
+        "reviewer_decision": "pending"
+      },
+      {
+        "finding_id": "ec47986c502969d4",
+        "respondent_id": "CASE05",
+        "question_id": "Q1A",
+        "category": "insufficient_probing",
+        "severity": "warning",
+        "claim": "The open-ended response may not have been probed sufficiently",
+        "evidence": {
+          "expected_question": "Why did production change? PROBE FULLY",
+          "audio_question": "Why did production change?",
+          "similarity": 0.6884,
+          "timestamp": {
+            "start": 13.0,
+            "end": 17.0
+          },
+          "spoken_answer": "Demand grew",
+          "answer_word_count": 2
+        },
+        "detector_confidence": 0.7,
+        "verdict": "confirmed",
+        "confidence": 0.82,
+        "verifier_reason": "The expected instruction explicitly says 'PROBE FULLY' but the spoken answer is only 2 words ('Demand grew'), indicating insufficient probing of the open-ended question.",
+        "reviewer_decision": "pending"
+      }
+    ]
+  }
+]

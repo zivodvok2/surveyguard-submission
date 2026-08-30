@@ -1,0 +1,14 @@
+.git
+.github
+.venv
+venv
+node_modules
+datasense-ui/node_modules
+__pycache__
+*.pyc
+.env
+.env.*
+!.env.example
+qc_dashboard.db
+dashboard/qc_dashboard.db
+outputs

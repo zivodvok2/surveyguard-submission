@@ -1,0 +1,15 @@
+Q0. CONSENT: Do you agree to participate in this research interview?
+1 = Yes
+2 = No
+
+Q1. Compared with last month, did production increase, remain unchanged, or decrease?
+1 = Increase
+2 = Remain unchanged
+3 = Decrease
+Q1a. Why did production change? PROBE FULLY
+
+Q2. READ EXACTLY: Has the number of employees increased, remained unchanged, or decreased?
+1 = Increase
+2 = Remain unchanged
+3 = Decrease
+Q2a. Why did the number of employees change? PROBE FULLY

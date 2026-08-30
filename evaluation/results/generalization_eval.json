@@ -1,0 +1,243 @@
+{
+  "evaluation_version": "1.0",
+  "cases": 10,
+  "primary_metric": "issue-detection F1",
+  "baseline": {
+    "true_positives": 5,
+    "false_positives": 15,
+    "false_negatives": 6,
+    "precision": 0.25,
+    "recall": 0.4545,
+    "f1": 0.3226
+  },
+  "data_only": {
+    "true_positives": 0,
+    "false_positives": 4,
+    "false_negatives": 11,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+  },
+  "multimodal_without_verifier": {
+    "true_positives": 10,
+    "false_positives": 10,
+    "false_negatives": 1,
+    "precision": 0.5,
+    "recall": 0.9091,
+    "f1": 0.6452
+  },
+  "final": {
+    "true_positives": 10,
+    "false_positives": 10,
+    "false_negatives": 1,
+    "precision": 0.5,
+    "recall": 0.9091,
+    "f1": 0.6452
+  },
+  "runtime_ms": {
+    "baseline_total": 29978.48,
+    "final_total": 173901.54
+  },
+  "review_audio_seconds_requested": {
+    "baseline_full_recordings": 227.0,
+    "surveyguard_flag_windows": 178.0,
+    "reduction_pct": 21.6
+  },
+  "records": [
+    {
+      "case_id": "gen01",
+      "ground_truth": [
+        "Q2::audio_data_mismatch",
+        "Q2::verbatim_contradicts_audio"
+      ],
+      "baseline_predictions": [
+        "Q2::invalid_code",
+        "Q2::verbatim_contradicts_audio",
+        "Q2a::insufficient_probing",
+        "Q2a::verbatim_audio_mismatch"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q2::audio_data_mismatch",
+        "Q2::verbatim_contradicts_audio",
+        "Q2A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q2::audio_data_mismatch",
+        "Q2::verbatim_contradicts_audio",
+        "Q2A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "gen02",
+      "ground_truth": [
+        "Q2::verbatim_contradicts_audio"
+      ],
+      "baseline_predictions": [
+        "Q2::invalid_code",
+        "Q2A::low_information_verbatim",
+        "Q2A::verbatim_contradicts_audio"
+      ],
+      "data_only_predictions": [
+        "Q2::audio_data_mismatch",
+        "Q2::off_topic_verbatim"
+      ],
+      "unverified_predictions": [
+        "Q2::audio_data_mismatch",
+        "Q2::off_topic_verbatim",
+        "Q2::verbatim_contradicts_audio",
+        "Q2A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q2::audio_data_mismatch",
+        "Q2::off_topic_verbatim",
+        "Q2::verbatim_contradicts_audio",
+        "Q2A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "gen03",
+      "ground_truth": [
+        "Q2::possible_leading_question"
+      ],
+      "baseline_predictions": [
+        "Q2A::insufficient_probing",
+        "Q2A::low_information_verbatim"
+      ],
+      "data_only_predictions": [
+        "Q2::off_topic_verbatim"
+      ],
+      "unverified_predictions": [
+        "Q2::off_topic_verbatim",
+        "Q2::possible_leading_question",
+        "Q2::verbatim_audio_mismatch",
+        "Q2A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q2::off_topic_verbatim",
+        "Q2::possible_leading_question",
+        "Q2::verbatim_audio_mismatch",
+        "Q2A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "gen04",
+      "ground_truth": [
+        "Q2A::insufficient_probing"
+      ],
+      "baseline_predictions": [
+        "Q2A::insufficient_probing",
+        "Q2A::low_information_verbatim"
+      ],
+      "data_only_predictions": [
+        "Q2::low_information_verbatim"
+      ],
+      "unverified_predictions": [
+        "Q2::low_information_verbatim",
+        "Q2A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q2::low_information_verbatim",
+        "Q2A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "gen05",
+      "ground_truth": [
+        "Q2::question_not_detected",
+        "Q2A::question_not_detected"
+      ],
+      "baseline_predictions": [
+        "Q2::audio_data_mismatch",
+        "Q2::question_not_detected",
+        "Q2A::insufficient_probing"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q2::question_not_detected",
+        "Q2A::question_not_detected"
+      ],
+      "final_predictions": [
+        "Q2::question_not_detected",
+        "Q2A::question_not_detected"
+      ]
+    },
+    {
+      "case_id": "gen06",
+      "ground_truth": [
+        "Q5::consent_not_detected"
+      ],
+      "baseline_predictions": [],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q5::consent_not_detected"
+      ],
+      "final_predictions": [
+        "Q5::consent_not_detected"
+      ]
+    },
+    {
+      "case_id": "gen07",
+      "ground_truth": [
+        "Q6::required_wording_changed"
+      ],
+      "baseline_predictions": [],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q6::question_not_detected"
+      ],
+      "final_predictions": [
+        "Q6::question_not_detected"
+      ]
+    },
+    {
+      "case_id": "gen08",
+      "ground_truth": [],
+      "baseline_predictions": [
+        "Q2A::verbatim_audio_mismatch"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q2A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q2A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "gen09",
+      "ground_truth": [
+        "Q2::possible_leading_question"
+      ],
+      "baseline_predictions": [
+        "Q2::possible_leading_question",
+        "Q2A::low_information_verbatim",
+        "Q2a::insufficient_probing"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q2::possible_leading_question"
+      ],
+      "final_predictions": [
+        "Q2::possible_leading_question"
+      ]
+    },
+    {
+      "case_id": "gen10",
+      "ground_truth": [
+        "Q2A::insufficient_probing"
+      ],
+      "baseline_predictions": [
+        "Q2A::insufficient_probing",
+        "Q2A::low_information_verbatim"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q2A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q2A::insufficient_probing"
+      ]
+    }
+  ]
+}

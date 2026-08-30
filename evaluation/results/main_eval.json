@@ -1,0 +1,415 @@
+{
+  "evaluation_version": "1.0",
+  "cases": 20,
+  "primary_metric": "issue-detection F1",
+  "baseline": {
+    "true_positives": 5,
+    "false_positives": 27,
+    "false_negatives": 15,
+    "precision": 0.1562,
+    "recall": 0.25,
+    "f1": 0.1923
+  },
+  "data_only": {
+    "true_positives": 7,
+    "false_positives": 0,
+    "false_negatives": 13,
+    "precision": 1.0,
+    "recall": 0.35,
+    "f1": 0.5185
+  },
+  "multimodal_without_verifier": {
+    "true_positives": 20,
+    "false_positives": 16,
+    "false_negatives": 0,
+    "precision": 0.5556,
+    "recall": 1.0,
+    "f1": 0.7143
+  },
+  "final": {
+    "true_positives": 20,
+    "false_positives": 16,
+    "false_negatives": 0,
+    "precision": 0.5556,
+    "recall": 1.0,
+    "f1": 0.7143
+  },
+  "runtime_ms": {
+    "baseline_total": 58795.47,
+    "final_total": 263398.84
+  },
+  "review_audio_seconds_requested": {
+    "baseline_full_recordings": 491.0,
+    "surveyguard_flag_windows": 375.0,
+    "reduction_pct": 23.6
+  },
+  "records": [
+    {
+      "case_id": "case01",
+      "ground_truth": [],
+      "baseline_predictions": [],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case02",
+      "ground_truth": [],
+      "baseline_predictions": [
+        "Q1A::verbatim_audio_mismatch"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case03",
+      "ground_truth": [
+        "Q1::audio_data_mismatch",
+        "Q1::verbatim_contradicts_audio"
+      ],
+      "baseline_predictions": [
+        "Q1::verbatim_audio_mismatch",
+        "Q1A::low_information_verbatim",
+        "Q1A::verbatim_audio_mismatch"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q1::audio_data_mismatch",
+        "Q1::verbatim_contradicts_audio",
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1::audio_data_mismatch",
+        "Q1::verbatim_contradicts_audio",
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case04",
+      "ground_truth": [
+        "Q1::audio_data_mismatch"
+      ],
+      "baseline_predictions": [
+        "Q1::verbatim_audio_mismatch",
+        "Q1A::low-information_verbatim",
+        "Q1A::verbatim_contradicts_audio"
+      ],
+      "data_only_predictions": [
+        "Q1::audio_data_mismatch"
+      ],
+      "unverified_predictions": [
+        "Q1::audio_data_mismatch",
+        "Q1::verbatim_audio_mismatch",
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1::audio_data_mismatch",
+        "Q1::verbatim_audio_mismatch",
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case05",
+      "ground_truth": [
+        "Q1::invalid_code"
+      ],
+      "baseline_predictions": [
+        "Q1::invalid_code",
+        "Q1A::insufficient_probing"
+      ],
+      "data_only_predictions": [
+        "Q1::invalid_code"
+      ],
+      "unverified_predictions": [
+        "Q1::invalid_code",
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1::invalid_code",
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case06",
+      "ground_truth": [
+        "Q1::low_information_verbatim",
+        "Q1A::insufficient_probing"
+      ],
+      "baseline_predictions": [
+        "Q1a::insufficient_probing"
+      ],
+      "data_only_predictions": [
+        "Q1::low_information_verbatim"
+      ],
+      "unverified_predictions": [
+        "Q1::low_information_verbatim",
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1::low_information_verbatim",
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case07",
+      "ground_truth": [
+        "Q1A::insufficient_probing"
+      ],
+      "baseline_predictions": [
+        "Q1A::insufficient_probing",
+        "Q1A::low_information_verbatim"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case08",
+      "ground_truth": [
+        "Q1::off_topic_verbatim",
+        "Q1::verbatim_audio_mismatch"
+      ],
+      "baseline_predictions": [
+        "Q1A::low_information_verbatim",
+        "Q1A::verbatim_audio_mismatch"
+      ],
+      "data_only_predictions": [
+        "Q1::off_topic_verbatim"
+      ],
+      "unverified_predictions": [
+        "Q1::off_topic_verbatim",
+        "Q1::verbatim_audio_mismatch",
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1::off_topic_verbatim",
+        "Q1::verbatim_audio_mismatch",
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case09",
+      "ground_truth": [
+        "Q1::possible_leading_question"
+      ],
+      "baseline_predictions": [
+        "Q1::possible_leading_question",
+        "Q1A::insufficient_probing"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q1::possible_leading_question",
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1::possible_leading_question",
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case10",
+      "ground_truth": [
+        "Q1::question_not_detected",
+        "Q1A::question_not_detected"
+      ],
+      "baseline_predictions": [
+        "Q1::off_topic_verbatim",
+        "Q1::verbatim_audio_mismatch",
+        "Q1A::insufficient_probing",
+        "Q1A::low_information_verbatim"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q1::question_not_detected",
+        "Q1A::question_not_detected"
+      ],
+      "final_predictions": [
+        "Q1::question_not_detected",
+        "Q1A::question_not_detected"
+      ]
+    },
+    {
+      "case_id": "case11",
+      "ground_truth": [
+        "Q3::consent_not_detected"
+      ],
+      "baseline_predictions": [
+        "Q3::consent_not_detected"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q3::consent_not_detected"
+      ],
+      "final_predictions": [
+        "Q3::consent_not_detected"
+      ]
+    },
+    {
+      "case_id": "case12",
+      "ground_truth": [
+        "Q2::required_wording_changed"
+      ],
+      "baseline_predictions": [
+        "Q2::required_wording_changed"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q2::possible_leading_question",
+        "Q2::required_wording_changed"
+      ],
+      "final_predictions": [
+        "Q2::possible_leading_question",
+        "Q2::required_wording_changed"
+      ]
+    },
+    {
+      "case_id": "case13",
+      "ground_truth": [],
+      "baseline_predictions": [
+        "Q1A::low_information_verbatim"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q1::question_not_detected",
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1::question_not_detected",
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case14",
+      "ground_truth": [
+        "Q1::off_topic_verbatim",
+        "Q1::verbatim_audio_mismatch"
+      ],
+      "baseline_predictions": [
+        "Q1A::verbatim_audio_mismatch",
+        "Q1A::verbatim_contradicts_audio"
+      ],
+      "data_only_predictions": [
+        "Q1::off_topic_verbatim"
+      ],
+      "unverified_predictions": [
+        "Q1::off_topic_verbatim",
+        "Q1::verbatim_audio_mismatch",
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1::off_topic_verbatim",
+        "Q1::verbatim_audio_mismatch",
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case15",
+      "ground_truth": [],
+      "baseline_predictions": [],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case16",
+      "ground_truth": [
+        "Q4::question_not_detected"
+      ],
+      "baseline_predictions": [],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q4::question_not_detected"
+      ],
+      "final_predictions": [
+        "Q4::question_not_detected"
+      ]
+    },
+    {
+      "case_id": "case17",
+      "ground_truth": [
+        "Q1::low_information_verbatim"
+      ],
+      "baseline_predictions": [
+        "Q1A::insufficient_probing"
+      ],
+      "data_only_predictions": [
+        "Q1::low_information_verbatim"
+      ],
+      "unverified_predictions": [
+        "Q1::low_information_verbatim",
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1::low_information_verbatim",
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case18",
+      "ground_truth": [
+        "Q1::off_topic_verbatim",
+        "Q1::verbatim_audio_mismatch"
+      ],
+      "baseline_predictions": [
+        "Q1a::low_information_verbatim",
+        "Q1a::verbatim_contradicts_audio"
+      ],
+      "data_only_predictions": [
+        "Q1::off_topic_verbatim"
+      ],
+      "unverified_predictions": [
+        "Q1::off_topic_verbatim",
+        "Q1::verbatim_audio_mismatch",
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1::off_topic_verbatim",
+        "Q1::verbatim_audio_mismatch",
+        "Q1A::insufficient_probing"
+      ]
+    },
+    {
+      "case_id": "case19",
+      "ground_truth": [],
+      "baseline_predictions": [
+        "Q1a::insufficient_probing",
+        "Q1a::low_information_verbatim"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [],
+      "final_predictions": []
+    },
+    {
+      "case_id": "case20",
+      "ground_truth": [],
+      "baseline_predictions": [
+        "Q1A::insufficient_probing",
+        "Q1A::low_information_verbatim"
+      ],
+      "data_only_predictions": [],
+      "unverified_predictions": [
+        "Q1A::insufficient_probing"
+      ],
+      "final_predictions": [
+        "Q1A::insufficient_probing"
+      ]
+    }
+  ]
+}

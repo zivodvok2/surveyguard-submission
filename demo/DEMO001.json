@@ -1,0 +1,14 @@
+{
+  "segments": [
+    {"start": 0.0, "end": 6.0, "speaker": "interviewer", "text": "Do you agree to participate in this research interview?"},
+    {"start": 6.0, "end": 8.0, "speaker": "respondent", "text": "Yes, I agree."},
+    {"start": 8.0, "end": 16.0, "speaker": "interviewer", "text": "Compared with last month, did production increase, remain unchanged, or decrease?"},
+    {"start": 16.0, "end": 21.0, "speaker": "respondent", "text": "Production actually decreased."},
+    {"start": 21.0, "end": 25.0, "speaker": "interviewer", "text": "Why did production change?"},
+    {"start": 25.0, "end": 32.0, "speaker": "respondent", "text": "We received fewer orders from our regular customers."},
+    {"start": 32.0, "end": 41.0, "speaker": "interviewer", "text": "Did the number of employees increase or decrease?"},
+    {"start": 41.0, "end": 45.0, "speaker": "respondent", "text": "The number stayed unchanged."},
+    {"start": 45.0, "end": 49.0, "speaker": "interviewer", "text": "Why did employee numbers change?"},
+    {"start": 49.0, "end": 54.0, "speaker": "respondent", "text": "Staffing remained stable."}
+  ]
+}
