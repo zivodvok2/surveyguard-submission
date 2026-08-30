@@ -25,7 +25,7 @@ A row can pass every database validation and still be wrong. For example, code `
 - Preserves supplied speaker labels and uses `unknown` when the transcription provider does not identify a speaker; it never guesses speaker identity.
 - Runs deterministic missing, range, duplicate, logic, duration, straightlining, consent, and pattern checks.
 - Detects audio–data contradictions, verbatim–audio mismatches, missing questions, changed required wording, leading questions, and insufficient probing.
-- Uses a recall-biased detector followed by a stricter independent verifier.
+- Uses a recall-biased detector followed by an independent verifier. The verifier is designed to confirm or reject; on the committed synthetic benchmark it confirmed all candidates (FP=16, FN=0) because the detector's false positives were plausible enough to pass independent review — this is a known limitation of the synthetic eval, not a claim the verifier never rejects.
 - Returns `confirmed`, `review`, or `rejected` rather than forcing every signal into pass/fail.
 - Lets a human confirm, reject, or investigate each finding.
 - Exports findings, transcript evidence, and extracted questionnaire rules to Excel.
@@ -74,8 +74,7 @@ The demo contains a spoken decrease captured as code `1 = Increase`, a verbatim 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements-api.txt
-pip install pytest
+pip install -r requirements.txt   # full dev set: app + eval + tests
 
 cd datasense-ui
 npm ci
@@ -85,7 +84,9 @@ cd ..
 uvicorn api:app --host 0.0.0.0 --port 8000
 ```
 
-Copy `.env.example` to `.env` only for local configuration. Do not commit `.env`.
+`requirements-api.txt` is the app-only subset used by Docker (no eval or test deps). Use `requirements.txt` for local development and evaluation. Copy `.env.example` to `.env` only for local configuration. Do not commit `.env`.
+
+The frontend source lives in `datasense-ui/` — this is the React/Vite UI for SurveyGuard and has no relation to any other product; the folder name reflects the original codebase from which the frontend was built.
 
 ## Real recordings
 
@@ -120,7 +121,7 @@ python -m evaluation.run_eval
 cd datasense-ui && npm ci && npm run build
 ```
 
-CI runs all three gates. At the time of this submission, the backend suite contains 112 passing tests.
+CI runs all three gates. At the time of this submission, the backend suite contains 110 passing tests (2 skipped: require a live external database connection).
 
 ## Important API routes
 
