@@ -31,8 +31,14 @@ data/processed/*
 
 # Outputs
 outputs/
-# Dashboard SQLite DB
+# Dashboard SQLite DB — generated at runtime, do not track
 dashboard/qc_dashboard.db
+qc_dashboard.db
+qc_dashboard.db-shm
+qc_dashboard.db-wal
+datasense-ui/qc_dashboard.db
+datasense-ui/qc_dashboard.db-shm
+datasense-ui/qc_dashboard.db-wal
 .aider*
 
 # Claude Code tooling
@@ -45,8 +51,9 @@ ARCHITECTURE_PROMPT.md
 # Patch files
 *.patch
 
-# datasense-ui build output — compiled JS bundle, do not track
-datasense-ui/dist/
+# datasense-ui build output — tracked so the repo is self-contained
+# (backend serves dist/ directly; no separate npm build step needed to run)
+# datasense-ui/dist/
 
 # Environment files — copy .env.example files and fill in values
 .env.local
