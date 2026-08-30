@@ -39,7 +39,7 @@ export function Dashboard() {
       >
         {/* Branding strip */}
         <div className="px-5 py-4 border-b border-white/10">
-          <p className="text-white font-semibold text-sm tracking-wide">Servallab</p>
+          <p className="text-white font-semibold text-sm tracking-wide">SurveyGuard</p>
           <p className="text-white/50 text-xs mt-0.5">QC Dashboard</p>
         </div>
 

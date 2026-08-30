@@ -107,7 +107,7 @@ function LandingPage() {
           </div>
           <h1 className="font-display font-extrabold text-4xl text-tx tracking-tight">SurveyGuard</h1>
         </div>
-        <p className="text-muted text-lg">Agentic multimodal QC by Servallab</p>
+        <p className="text-muted text-lg">Agentic Multimodal QC</p>
       </div>
 
       {/* Upload */}

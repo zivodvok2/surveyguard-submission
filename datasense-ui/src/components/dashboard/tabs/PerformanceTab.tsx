@@ -117,7 +117,7 @@ export function PerformanceTab({ projectId }: Props) {
               <Download size={12} /> Download template
             </button>
           </div>
-          <p className="text-xs text-muted">Accepts iField performance export (with 2 header rows) or the Servallab template.</p>
+          <p className="text-xs text-muted">Accepts iField performance export (with 2 header rows) or the SurveyGuard template.</p>
           <div className="flex flex-wrap gap-3 items-end">
             <div>
               <label className="label mb-1 block">File</label>

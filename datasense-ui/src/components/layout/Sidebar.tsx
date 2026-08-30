@@ -83,7 +83,7 @@ export function Sidebar() {
         </div>
         <div className="flex-1">
           <div className="font-display font-bold text-sm text-white leading-tight tracking-wide">SurveyGuard</div>
-          <div className="text-[10px] text-white/50 leading-none mt-0.5 tracking-widest uppercase">by Servallab</div>
+          <div className="text-[10px] text-white/50 leading-none mt-0.5 tracking-widest uppercase">Agentic Multimodal QC</div>
         </div>
         {!healthLoading && (
           <div title={online ? 'Backend online' : 'Backend unreachable'}>
