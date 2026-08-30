@@ -22,7 +22,7 @@ Export the Excel report and show Summary, Findings, Transcript evidence, and Que
 
 ## 4:15–4:50 — Measured result
 
-Show the README table: baseline F1 0.500; data-only 0.519; multimodal without verifier 0.952 with two false positives; final 1.000 with zero false positives. State this is a scoped synthetic benchmark.
+Show the README table: baseline F1 0.192; data-only 0.519; multimodal without verifier 0.714 (FP=16, FN=0); final detector + verifier 0.714. Generalization set (10 held-out novel cases): baseline 0.323, final 0.645. State this is a scoped synthetic benchmark — not a production generalisation claim.
 
 ## 4:50–5:00 — Insight
 
