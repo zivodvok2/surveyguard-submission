@@ -154,5 +154,5 @@ Read [SECURITY.md](SECURITY.md) before deployment.
 - [DEMO_SCRIPT.md](DEMO_SCRIPT.md) — five-minute recording script
 - [ARCHITECTURE.md](ARCHITECTURE.md) — system design
 - [CHANGELOG_HACKATHON.md](CHANGELOG_HACKATHON.md) — experiments and decisions
-- `evaluation/results/latest.json` — machine-readable results
+- `evaluation/results/main_eval.json` — machine-readable results (main eval); `evaluation/results/generalization_eval.json` for the generalization set
 - `evaluation/trajectories.json` — representative agent trajectories
