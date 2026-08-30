@@ -33,7 +33,7 @@ export function Header({ onSettings }: Props) {
   const { activeTab, setActiveTab, jobStatus, jobProgress, fileId, authUser, openLogin, logoutUser, dashboardMode, setDashboardMode, setDashboardProject } = useAppStore()
   const visibleTabs = dashboardMode
     ? TABS.filter(t => PRE_FILE_TABS.has(t.label))
-    : (fileId ? TABS : TABS.filter(t => PRE_FILE_TABS.has(t.label)))
+    : TABS
   return (
     <header className="bg-surface border-b border-line shrink-0">
       {/* Progress bar */}

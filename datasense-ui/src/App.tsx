@@ -183,7 +183,7 @@ function AppShell() {
           <Sidebar />
           <div className="flex-1 flex flex-col overflow-hidden">
             <Header onSettings={openSettings} />
-            {fileId || activeTab === 'Config' || activeTab === 'Agentic Audit' ? (
+            {fileId || activeTab ? (
               <TabContent />
             ) : (
               <main className="flex-1 overflow-auto">
