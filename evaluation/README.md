@@ -31,14 +31,14 @@ Outputs: `results/main_eval.json` (main run) or `results/generalization_eval.jso
 
 | Version | TP | FP | FN | Precision | Recall | F1 |
 |---|---:|---:|---:|---:|---:|---:|
-| Baseline | 7 | 1 | 13 | 0.875 | 0.350 | 0.500 |
+| Baseline | 5 | 27 | 15 | 0.156 | 0.250 | 0.192 |
 | Data-only | 7 | 0 | 13 | 1.000 | 0.350 | 0.519 |
-| Multimodal, no verifier | 20 | 2 | 0 | 0.909 | 1.000 | 0.952 |
-| Final | 20 | 0 | 0 | 1.000 | 1.000 | 1.000 |
+| Multimodal, no verifier | 20 | 16 | 0 | 0.556 | 1.000 | 0.714 |
+| Final | 20 | 16 | 0 | 0.556 | 1.000 | 0.714 |
 
 ## Review-window proxy
 
-Full transcript durations total 491 seconds. Selecting a 12-second review window for each final issue requests 240 seconds, a 51.1% reduction. This is a deterministic review-workload proxy, not observed analyst time.
+Full transcript durations total 491 seconds. Selecting a 12-second review window for each final issue requests 375 seconds, a 23.6% reduction. This is a deterministic review-workload proxy, not observed analyst time.
 
 ## Limits
 

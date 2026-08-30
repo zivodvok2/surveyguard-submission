@@ -1,0 +1,32 @@
+{
+  "description": "Case 18 — clean, exact detection: system finds exactly the right two issues, no false positives, no misses.",
+  "note": "This record is drawn from evaluation/results/main_eval.json. Full per-finding verifier reasoning is available in evaluation/trajectories.json for cases 01–05; case18 was selected here because it has perfect precision and recall (0 FP, 0 FN) in the committed run.",
+  "case_id": "case18",
+  "ground_truth": [
+    "Q1::off_topic_verbatim",
+    "Q1::verbatim_audio_mismatch"
+  ],
+  "baseline_predictions": [
+    "Q1A::verbatim_audio_mismatch",
+    "Q1a::insufficient_probing"
+  ],
+  "data_only_predictions": [
+    "Q1::off_topic_verbatim"
+  ],
+  "unverified_predictions": [
+    "Q1::off_topic_verbatim",
+    "Q1::verbatim_audio_mismatch"
+  ],
+  "final_predictions": [
+    "Q1::off_topic_verbatim",
+    "Q1::verbatim_audio_mismatch"
+  ],
+  "outcome": {
+    "true_positives": 2,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  }
+}

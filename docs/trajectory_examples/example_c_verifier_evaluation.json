@@ -1,0 +1,56 @@
+{
+  "description": "Case 05 — verifier evaluating two candidate findings of different types: a deterministic invalid_code (captured value 9 not in allowed codes) and an LLM-based insufficient_probing (2-word answer after PROBE FULLY instruction). Both confirmed. Illustrates the verifier reasoning about evidence from different detection pathways.",
+  "source": "evaluation/trajectories.json (index 4)",
+  "case_id": "case05",
+  "ground_truth": [
+    "Q1::invalid_code"
+  ],
+  "verified_findings": [
+    {
+      "finding_id": "2cc8a5a747cafa10",
+      "respondent_id": "CASE05",
+      "question_id": "Q1",
+      "category": "invalid_code",
+      "severity": "critical",
+      "claim": "Captured value is not a valid questionnaire code",
+      "evidence": {
+        "column": "Q1",
+        "captured_value": 9,
+        "allowed_codes": {
+          "1": "Increase",
+          "2": "Remain unchanged",
+          "3": "Decrease"
+        }
+      },
+      "detector_confidence": 1.0,
+      "verdict": "confirmed",
+      "confidence": 0.97,
+      "verifier_reason": "The captured value 9 is not among the allowed codes 1, 2, or 3 defined for Q1.",
+      "reviewer_decision": "pending",
+      "detection_pathway": "deterministic — code validity lookup"
+    },
+    {
+      "finding_id": "ec47986c502969d4",
+      "respondent_id": "CASE05",
+      "question_id": "Q1A",
+      "category": "insufficient_probing",
+      "severity": "warning",
+      "claim": "The open-ended response may not have been probed sufficiently",
+      "evidence": {
+        "expected_question": "Why did production change? PROBE FULLY",
+        "audio_question": "Why did production change?",
+        "similarity": 0.6884,
+        "timestamp": { "start": 13.0, "end": 17.0 },
+        "spoken_answer": "Demand grew",
+        "answer_word_count": 2
+      },
+      "detector_confidence": 0.7,
+      "verdict": "confirmed",
+      "confidence": 0.82,
+      "verifier_reason": "The expected instruction was 'PROBE FULLY' but the spoken answer is only two words ('Demand grew'), indicating insufficient probing of the open-ended response.",
+      "reviewer_decision": "pending",
+      "detection_pathway": "LLM — semantic judgment of probing sufficiency"
+    }
+  ],
+  "verifier_note": "Neither finding was rejected in the recorded runs. The verifier confirmed both using separate reasoning chains. For the deterministic finding (invalid_code) the verifier simply validated the code-lookup result; for the LLM finding (insufficient_probing) it evaluated the answer length and missing probe instruction against questionnaire requirements. The insufficient_probing finding is a false positive in this case (not in ground_truth). No rejections appear in the five sampled trajectories — this is consistent with the recall-biased detector design (FP=16 in the main eval run)."
+}

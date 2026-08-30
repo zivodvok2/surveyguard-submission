@@ -1,0 +1,82 @@
+{
+  "description": "Case 03 — real issues correctly detected end-to-end: transcription alignment identifies the question, detector raises audio_data_mismatch and verbatim_contradicts_audio, verifier independently confirms both with reasoning grounded in the evidence.",
+  "source": "evaluation/trajectories.json (index 2)",
+  "case_id": "case03",
+  "ground_truth": [
+    "Q1::audio_data_mismatch",
+    "Q1::verbatim_contradicts_audio"
+  ],
+  "verified_findings": [
+    {
+      "finding_id": "10d6166a60bf6f9f",
+      "respondent_id": "CASE03",
+      "question_id": "Q1",
+      "category": "audio_data_mismatch",
+      "severity": "critical",
+      "claim": "The spoken answer conflicts with the captured survey value",
+      "evidence": {
+        "expected_question": "Compared with last month, did production increase, remain unchanged, or decrease?",
+        "audio_question": "Compared with last month, did production increase, remain unchanged, or decrease?",
+        "similarity": 1.0,
+        "timestamp": { "start": 0.0, "end": 8.0 },
+        "spoken_answer": "Production decreased Why did production change?",
+        "spoken_direction": "decrease",
+        "captured_column": "Q1",
+        "captured_value": 1,
+        "captured_direction": "increase"
+      },
+      "detector_confidence": 0.97,
+      "verdict": "confirmed",
+      "confidence": 0.97,
+      "verifier_reason": "The spoken answer clearly indicates production decreased, but the captured value (1) maps to 'increase', creating a direct conflict between the audio response and the recorded survey value.",
+      "reviewer_decision": "pending"
+    },
+    {
+      "finding_id": "d0bafb74c471f5a3",
+      "respondent_id": "CASE03",
+      "question_id": "Q1",
+      "category": "verbatim_contradicts_audio",
+      "severity": "critical",
+      "claim": "The captured verbatim reverses the meaning of the spoken answer",
+      "evidence": {
+        "expected_question": "Compared with last month, did production increase, remain unchanged, or decrease?",
+        "audio_question": "Compared with last month, did production increase, remain unchanged, or decrease?",
+        "similarity": 1.0,
+        "timestamp": { "start": 0.0, "end": 8.0 },
+        "spoken_answer": "Customer demand was lower",
+        "captured_verbatim": "Production increased because demand grew",
+        "verbatim_column": "Q1A",
+        "semantic_similarity": 0.3029,
+        "spoken_direction": "decrease",
+        "verbatim_direction": "increase"
+      },
+      "detector_confidence": 0.97,
+      "verdict": "confirmed",
+      "confidence": 0.95,
+      "verifier_reason": "The captured verbatim states production increased due to growing demand, directly reversing the spoken answer that demand was lower, and the semantic similarity of 0.3029 with opposite directions confirms a meaning reversal.",
+      "reviewer_decision": "pending"
+    },
+    {
+      "finding_id": "f2200517d8e9766d",
+      "respondent_id": "CASE03",
+      "question_id": "Q1A",
+      "category": "insufficient_probing",
+      "severity": "warning",
+      "claim": "The open-ended response may not have been probed sufficiently",
+      "evidence": {
+        "expected_question": "Why did production change? PROBE FULLY",
+        "audio_question": "Why did production change?",
+        "similarity": 0.6884,
+        "timestamp": { "start": 13.0, "end": 17.0 },
+        "spoken_answer": "Customer demand was lower",
+        "answer_word_count": 4
+      },
+      "detector_confidence": 0.7,
+      "verdict": "confirmed",
+      "confidence": 0.82,
+      "verifier_reason": "The expected instruction was 'PROBE FULLY' but the spoken answer is only four words ('Customer demand was lower'), indicating insufficient probing of the open-ended response.",
+      "reviewer_decision": "pending"
+    }
+  ],
+  "pipeline_note": "Alignment matched the transcript segment at similarity=1.0 for Q1 and 0.6884 for Q1A. The detector raised all three candidates. The verifier independently confirmed each with evidence-grounded reasoning. The insufficient_probing finding (Q1A) is a false positive in this case — it is not in ground_truth — demonstrating a known system limitation: the verifier confirms short answers conservatively."
+}

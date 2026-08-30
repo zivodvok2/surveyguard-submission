@@ -101,14 +101,14 @@ The harness evaluates the same 20 synthetic cases against every stage. Current c
 
 | Version | Precision | Recall | F1 |
 |---|---:|---:|---:|
-| Single-pass lexical baseline | 0.875 | 0.350 | 0.500 |
+| Single-pass lexical baseline | 0.156 | 0.250 | 0.192 |
 | Dataset-only semantic QC | 1.000 | 0.350 | 0.519 |
-| Multimodal detector, no verifier | 0.909 | 1.000 | 0.952 |
-| Final detector + verifier | 1.000 | 1.000 | 1.000 |
+| Multimodal detector, no verifier | 0.556 | 1.000 | 0.714 |
+| Final detector + verifier | 0.556 | 1.000 | 0.714 |
 
-The benchmark also computes an audio-review-window proxy: full recordings total 491 seconds; flag windows request 240 seconds, a 51.1% reduction. This is a deterministic workload proxy, **not** a measured human time study.
+The benchmark also computes an audio-review-window proxy: full recordings total 491 seconds; flag windows request 375 seconds, a 23.6% reduction. This is a deterministic workload proxy, **not** a measured human time study.
 
-These figures prove performance only on the committed, scoped synthetic benchmark. They are not a claim of universal accuracy. Full records are in `evaluation/results/latest.json`; representative verified trajectories are in `evaluation/trajectories.json`.
+These figures prove performance only on the committed, scoped synthetic benchmark. They are not a claim of universal accuracy. Full records are in `evaluation/results/main_eval.json`; representative verified trajectories are in `evaluation/trajectories.json`.
 
 See [evaluation/README.md](evaluation/README.md) for labels, scoring, and limitations, and [CHANGELOG_HACKATHON.md](CHANGELOG_HACKATHON.md) for the iteration log.
 
