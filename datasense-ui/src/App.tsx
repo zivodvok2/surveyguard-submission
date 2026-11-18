@@ -21,9 +21,8 @@ import { Demos } from './components/tabs/Demos'
 import { AgenticAudit } from './components/tabs/AgenticAudit'
 import { OnboardingTooltip } from './components/onboarding/OnboardingTooltip'
 import { SettingsPanel } from './components/settings/SettingsPanel'
-import { Dashboard } from './components/dashboard/Dashboard'
-import { LoginPage } from './pages/LoginPage' // Import the new full-page login component
-import { useAppStore, IS_DASHBOARD_DOMAIN } from './store/appStore'
+import { LoginPage } from './pages/LoginPage'
+import { useAppStore } from './store/appStore'
 
 const qc = new QueryClient({
   defaultOptions: { queries: { retry: 1, refetchOnWindowFocus: false, staleTime: 60_000 } },
@@ -165,35 +164,24 @@ function TabContent() {
 }
 
 function AppShell() {
-  const { fileId, activeTab, demosOpen, settingsOpen, openSettings, closeSettings, dashboardMode, setDashboardMode } = useAppStore() // Removed loginOpen
-
-  useEffect(() => {
-    if (IS_DASHBOARD_DOMAIN) setDashboardMode(true)
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  const { fileId, activeTab, demosOpen, settingsOpen, openSettings, closeSettings } = useAppStore()
 
   return (
     <div className="flex h-full">
-      {dashboardMode ? (
+      <>
+        <Sidebar />
         <div className="flex-1 flex flex-col overflow-hidden">
           <Header onSettings={openSettings} />
-          <Dashboard />
+          {fileId || activeTab ? (
+            <TabContent />
+          ) : (
+            <main className="flex-1 overflow-auto">
+              <LandingPage />
+            </main>
+          )}
         </div>
-      ) : (
-        <>
-          <Sidebar />
-          <div className="flex-1 flex flex-col overflow-hidden">
-            <Header onSettings={openSettings} />
-            {fileId || activeTab ? (
-              <TabContent />
-            ) : (
-              <main className="flex-1 overflow-auto">
-                <LandingPage />
-              </main>
-            )}
-          </div>
-          {demosOpen && !fileId && <DemosModal />}
-        </>
-      )}
+        {demosOpen && !fileId && <DemosModal />}
+      </>
       {settingsOpen && <SettingsPanel onClose={closeSettings} />}
     </div>
   )
